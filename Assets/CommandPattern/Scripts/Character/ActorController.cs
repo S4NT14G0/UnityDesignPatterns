@@ -36,21 +36,13 @@ namespace CommandPattern.Character
         {
 
             Vector3 down = Vector3.down;
-            float distance = 100f;
 
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, down, out hit))
             {
-                distance = Vector3.Distance(this.transform.position, hit.point);
+                float distance = Vector3.Distance(this.transform.position, hit.point);
                 Debug.DrawRay(transform.position, down * distance, Color.green);
-
-                Debug.Log(distance);
-                if (distance < 1.4f)
-                    grounded = true;
-                else
-                    grounded = false;
-
             }
 
 
